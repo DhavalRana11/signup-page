@@ -1,0 +1,140 @@
+﻿
+@model QuickShoap.Models.signupmodel
+
+@using System.Web.Optimization;
+@using QuickShoap.Infrastructure;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Swift shop| Signup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Template/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+    <link href="~/Template/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Graph CSS -->
+    <link href="~/Template/css/font-awesome.css" rel="stylesheet">
+    <!-- jQuery -->
+    <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
+    <!-- lined-icons -->
+    <link rel="stylesheet" href="~/Template/css/icon-font.min.css" type='text/css' />
+    <!-- //lined-icons -->
+    <script src="~/Template/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+
+    @Scripts.Render("~/bundles/jqueryval")
+    <!--clock init-->
+</head>
+<body>
+    <!--/Signup-->
+
+    <div class="error_page">
+        <!--/signup-top-->
+        <div class="error-top">
+            <h2 class="inner-tittle page"> Swift Shop</h2>
+            <div class="login" style="background:none !important;">
+                <h3 class="inner-tittle t-inner">signup</h3>
+                @Html.RenderMessages(false)
+                @using (Html.BeginForm("Index", "signup", FormMethod.Post, new { id = "frmsignup", defaultbutton = "btnsignup" }))
+                {
+                    @Html.ValidationMessageFor(m => m.firstname)
+                    @Html.TextBoxFor(m => m.firstname, new
+               {
+                   @placeholder = "firstname",
+                   @class = "text",
+                   @style= "background:none !important;",
+                   @maxlength = "50"
+               })
+                    {
+                    @Html.ValidationMessageFor(m => m.lastname)
+                    @Html.TextBoxFor(m => m.lastname, new
+               {
+                   @placeholder = "lastname",
+                   @class = "text",
+                   @style = "background:none !important;",
+                   @maxlength = "50"
+               })
+
+                    @Html.ValidationMessageFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email, new
+               {
+                   @placeholder = "email",
+                   @class = "text",
+                   @style = "background:none !important;",
+                   @maxlength = "50"
+               })
+                   @Html.ValidationMessageFor(m => m.password)
+                    @Html.PasswordFor(m => m.password, new
+
+               {
+                   @placeholder = "password",
+                   @class = "text",
+                   @style = "background:none !important;",
+                   @maxlength = "50"
+               })
+                    @Html.ValidationMessageFor(m => m.cpassword)
+                    @Html.PasswordFor(m => m.cpassword, new
+               {
+                   @placeholder = "confrompassword",
+                   @class = "text",
+                   @style = "background:none !important;",
+                   @maxlength = "50"
+               })
+
+                    
+                        @Html.TextBoxFor(m => m.gender, new
+                   {
+                       @placeholder = "gender",
+                       @class = "text",
+                       @style = "background:none !important;",
+                       @maxlength = "50"
+                   })
+
+
+                     @Html.ValidationMessageFor(m => m.Residency)
+                    @Html.TextBoxFor(m => m.Residency, new
+               {
+                   @placeholder = "Residency",
+                   @class = "text",
+                   @style = "background:none !important;",
+                   @maxlength = "50"
+               })
+                        {
+                    @Html.ValidationMessageFor(m => m.City)
+                    @Html.TextBoxFor(m => m.City, new
+               {
+                   @placeholder = "city",
+                   @class = "text",
+                   @style = "background:none !important;",
+                   @maxlength = "50"
+               })
+                    <div class="submit"><input type="submit" value="Signup"></div>
+                    <div class="clearfix"></div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+
+
+        <!--//login-top-->
+    </div>
+
+    <!--//login-->
+    <!--footer section start-->
+    @Html.Partial("~/Views/Shared/FooterView.cshtml");
+    <!--footer section end-->
+    <!--js -->
+    <script src="~/Template/js/jquery.nicescroll.js"></script>
+    <script src="~/Template/js/scripts.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Template/js/bootstrap.min.js"></script>
+</body>
+</html>
